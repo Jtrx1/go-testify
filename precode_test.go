@@ -36,6 +36,5 @@ func TestMainHandlerWhenCityIncorrect(t *testing.T) {
 	handler := http.HandlerFunc(mainHandle)
 	handler.ServeHTTP(responseRecorder, req)
 	assert.Equal(t, http.StatusBadRequest, responseRecorder.Code)
-	//fmt.Println(responseRecorder.Body.String())
 	assert.Equal(t, responseRecorder.Body.String(), "wrong city value")
 }
